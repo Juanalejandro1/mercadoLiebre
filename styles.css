@@ -138,11 +138,49 @@ button span
 
 /*fin header*/
 
+/*carrousel de fotos */
+
+.carrusel {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+.carrusel img {
+  width: 100%;
+  height: 300px;
+  position: absolute;
+  animation: cambio 12s infinite;
+  opacity: 0;
+}
+.carrusel img:nth-child(1) {
+  animation-delay: 0s;
+}
+.carrusel img:nth-child(2) {
+  animation-delay: 3s;
+}
+.carrusel img:nth-child(3) {
+  animation-delay: 6s;
+}
+.carrusel img:nth-child(4) {
+  animation-delay: 9s;
+}
+@keyframes cambio {
+  0% {opacity: 0;}
+  8% {opacity: 1;}
+  33% {opacity: 1;}
+  42% {opacity: 0;}
+  100% {opacity: 0;}
+}
+
+
 /* Media querys */
 @media screen and (min-width: 1024px) {
     .header-links
     {
       margin: 0.4rem;
+      width: 540px;
+      
     }   
     .header-links a
     {
@@ -154,11 +192,12 @@ button span
     .forms{
         display: flex;
         align-items: center;
-        width: 522px;
+        width: 475px;
         gap: 0px;
         display: flex;
         font-size: 13px;
         align-items: center;
+        margin-left: 8%;
       }
 
       .header-links a
@@ -166,11 +205,36 @@ button span
         font-size: 15px;
         text-decoration: none;
         color: #000;
-        gap: 2px;
-      }  
+        
+      } 
+      
+      .flex-header{
+        margin: 0 0 1.2% 26%;
+      } 
     
 }
 
 @media screen and (min-width: 1440px) {
+  .header-links{
+    width: 800px;
+  }
+  .dropdown button{
+   font-size: 18px; 
+  }
+  .header-links a
+  {
+    text-decoration: none;
+    color: #000;
+    margin: 2px;
+    font-size: 19px;
+  }
 
+  .forms a{
+    font-size: 18px;
+    
+  }
+
+  .header-links a:hover{
+    font-weight: bold;
+  }
 }
